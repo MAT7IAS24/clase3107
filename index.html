@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zombie Siege</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <section class="arena-wrap">
+        <canvas id="game" width="960" height="640" aria-label="Juego Zombie Siege"></canvas>
+        <div class="scanlines"></div>
+        <div id="message" class="message">
+          <p class="eyebrow">SECTOR 07 // PROTOCOLO ACTIVO</p>
+          <h1>ZOMBIE<br><span>SIEGE</span></h1>
+          <p class="instructions">MUÉVETE CON <b>W A S D</b> O <b>FLECHAS</b><br>ATACA CON <b>ESPACIO</b></p>
+          <button id="startButton">INICIAR MISIÓN</button>
+        </div>
+      </section>
+      <aside class="hud">
+        <div class="logo">ZOMBIE <span>SIEGE</span></div>
+        <div class="panel">
+          <label>PUNTAJE</label><strong id="score">000000</strong>
+          <label>NIVEL</label><strong id="level">01</strong>
+          <label>OLEADA</label><strong id="wave">01 / 03</strong>
+          <label>VIDAS</label><div id="lives" class="hearts">♥ ♥ ♥</div>
+        </div>
+        <div class="panel weapon-panel">
+          <label>ARMA</label><strong id="weapon">BATE</strong>
+          <div class="ammo">MUNICIÓN <span id="ammo">∞</span></div>
+          <div class="weapon-icon" id="weaponIcon">▰</div>
+        </div>
+        <div class="panel help">
+          <label>CONTROLES</label>
+          <p>↔ ↕ MOVERSE</p>
+          <p><kbd>ESPACIO</kbd> ATACAR</p>
+          <p><kbd>P</kbd> PAUSA</p>
+        </div>
+      </aside>
+    </main>
+    <footer><span>LA NOCHE APENAS COMIENZA</span><span>© 2026 ARCADE DIVISION</span></footer>
+    <script src="game.js"></script>
+  </body>
+</html>
