@@ -13,10 +13,6 @@ canvas { display:block; width:100%; height:auto; image-rendering:pixelated; }
 .panel { position:relative; border:2px solid #607b2d; background:rgba(3,6,3,.82); padding:18px; display:grid; gap:10px; box-shadow:inset 0 0 18px #000; }
 label { font-size:11px; color:#fff; } strong { color:var(--red); font-size:21px; letter-spacing:1px; } .hearts { color:var(--red); font-size:19px; letter-spacing:3px; text-shadow:0 0 8px #c11; }
 .weapon-panel strong { color:var(--acid); font-size:16px; }.ammo { font-size:9px; color:#9c9e8e; }.ammo span { color:#fff; float:right; }.weapon-icon { position:absolute; right:20px; top:36px; color:var(--acid); font-size:40px; transform:rotate(-11deg); }
-.weapon-slots { display:grid; gap:5px; margin-top:4px; padding-top:8px; border-top:1px solid #304017; font-size:8px; color:#7e9270; }
-.weapon-slot { padding:5px 4px; border-left:2px solid transparent; }.weapon-slot.active { color:var(--acid); border-left-color:var(--acid); background:rgba(167,229,62,.08); }.weapon-slot.locked { color:#5d6255; }
-.ammo-bar { height:8px; border:1px solid #718c3e; background:#172015; overflow:hidden; }.ammo-bar span { display:block; height:100%; width:100%; background:var(--acid); transition:width .15s,background .15s; }
-.cat-name { color:#d0a46b!important; font-size:14px!important; }.cat-status { color:#d9d58b; font-size:8px; line-height:1.5; }
 .help { color:#99b466; line-height:1.5; font-size:9px; }.help p { margin:2px 0; } kbd { color:#fff; border:1px solid #99b466; padding:3px; font:inherit; }
 footer { position:fixed; bottom:18px; width:min(1280px,94vw); display:flex; justify-content:space-between; font-size:8px; color:#526041; }
 .message { position:absolute; z-index:3; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; background:rgba(1,4,1,.84); transition:opacity .25s; }
