@@ -14,7 +14,7 @@
         <div id="message" class="message">
           <p class="eyebrow">SECTOR 07 // PROTOCOLO ACTIVO</p>
           <h1>ZOMBIE<br><span>SIEGE</span></h1>
-          <p class="instructions">MUÉVETE CON <b>W A S D</b> O <b>FLECHAS</b><br>ATACA CON <b>ESPACIO</b></p>
+          <p class="instructions">MUÉVETE CON <b>W A S D</b> O <b>FLECHAS</b><br>ATACA CON <b>ESPACIO</b> · COMPAÑERO <b>Q</b></p>
           <button id="startButton">INICIAR MISIÓN</button>
         </div>
       </section>
@@ -29,12 +29,20 @@
         <div class="panel weapon-panel">
           <label>ARMA</label><strong id="weapon">BATE</strong>
           <div class="ammo">MUNICIÓN <span id="ammo">∞</span></div>
+          <div class="ammo-bar" aria-label="Munición restante"><span id="ammoBar"></span></div>
+          <div id="weaponSlots" class="weapon-slots"></div>
           <div class="weapon-icon" id="weaponIcon">▰</div>
+        </div>
+        <div class="panel companion-panel">
+          <label>COMPAÑERO</label><strong class="cat-name">GATO GORDO</strong>
+          <div class="cat-status" id="catStatus">Q · DISTRAER LISTO</div>
         </div>
         <div class="panel help">
           <label>CONTROLES</label>
           <p>↔ ↕ MOVERSE</p>
           <p><kbd>ESPACIO</kbd> ATACAR</p>
+          <p><kbd>1 2 3 4</kbd> CAMBIAR ARMA</p>
+          <p><kbd>Q</kbd> GATO: DISTRAER</p>
           <p><kbd>P</kbd> PAUSA</p>
         </div>
       </aside>
