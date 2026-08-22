@@ -10,6 +10,10 @@ const weapons=[
 let game=null,lastFrame=0;
 addEventListener('keydown',e=>{keys[e.code]=true;if(['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code))e.preventDefault();if(e.code==='KeyP'&&!e.repeat&&game?.running){game.paused=!game.paused;announce(game.paused?'PAUSA':'')}if(e.code==='KeyQ'&&!e.repeat)useCat();if(e.code.startsWith('Digit')&&!e.repeat)switchWeapon(Number(e.code.slice(-1))-1)});
 addEventListener('keyup',e=>keys[e.code]=false);start.onclick=handleStart;
+document.querySelectorAll('.mobile-controls [data-key]').forEach(button=>{const code=button.dataset.key,release=()=>{keys[code]=false;button.classList.remove('pressed')};button.addEventListener('pointerdown',e=>{e.preventDefault();keys[code]=true;button.classList.add('pressed');button.setPointerCapture?.(e.pointerId)});button.addEventListener('pointerup',release);button.addEventListener('pointercancel',release);button.addEventListener('pointerleave',release)});
+document.querySelector('[data-action="weapon"]').addEventListener('click',()=>{if(!game)return;const available=weapons.map((w,i)=>w.unlocked?i:-1).filter(i=>i>=0),position=available.indexOf(game.weapon);switchWeapon(available[(position+1)%available.length])});
+document.querySelector('[data-action="cat"]').addEventListener('click',()=>useCat());
+document.querySelector('[data-action="pause"]').addEventListener('click',()=>{if(game?.running){game.paused=!game.paused;announce(game.paused?'PAUSA':'CONTINUAR')}});
 function handleStart(){if(game?.tutorial){game.tutorial=false;game.paused=false;message.classList.add('hidden')}else if(game&&!game.running&&game.level===2){game.running=true;message.classList.add('hidden');setLevel(3);requestAnimationFrame(loop)}else startGame()}
 
 function startGame(){
